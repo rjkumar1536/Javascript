@@ -1,0 +1,809 @@
+<html>
+    <head>
+        <script>
+            //// long running function
+            //function waitThreeSeconds() {
+            //    var ms = 3000 + new Date().getTime();
+            //    while (new Date() < ms){}
+            //    console.log('finished function');
+            //}
+            //
+            //function clickHandler() {
+            //    console.log('click event!');   
+            //}
+            //
+            //// listen for the click event
+            //document.addEventListener('click', clickHandler);
+            //
+            //
+            //waitThreeSeconds();
+            //console.log('finished execution');
+
+            //var a = null;
+            //var b;
+            //if(a  == b){
+            //    console.log("equal");
+            //    console.log(a);
+            //    console.log(b);
+            //}
+            //else{
+            //    console.log("unequal");
+            //}
+            //var person = new Object();
+            //person.name = "Rajender";
+            //person.age = 20;
+            //person.mobile = '8561969937';
+            //person.address = 'chak 6p Anoopgarh';
+            //person.getDetails = function(){
+            //    return 'Name : ' + person.name +'\nAge : ' + person.age + '\nMobile : ' + person.mobile + '\nAddress : ' + person.address;
+            //}
+            //console.log(person.getDetails());
+
+            //var person = {
+            //    name : "rajender",
+            //    age  : 21,
+            //    contact : "+918561969937",
+            //    address : "chak 6P Anoopgarh",
+            //    getDetails : function(){
+            //        return person.name + ' ' + person.age + ' ' + person.contact + ' ' + person.address;
+            //    }
+            //};
+            //var a = JSON.stringify(person);
+            //console.log(JSON.parse(a));
+
+            // FIrst classs functions 
+            // functions are objects
+            /* objects have name / value pairs so functions have objects ,primitve , and functions as keys and It can be passed to another function as arg . can be stored into variable and can be stored in a array and can be return as well
+            //let fn = function(){
+            //    console.log("this Is Function");
+            //}
+            //let obj = {
+            //    getDetail : function(){
+            //        console.log("obhe");
+            //    }
+            //}
+            //obj.getDetail();
+
+            */
+            //function greet(){
+            //    console.log('hi');
+            //    return function(){
+            //        console.log('nothing');
+            //    }
+            //}
+            //greet.language = 'english';
+            //greet.sayIndian = function(){
+            //    console.log('ram ram ji');
+            //};
+            //greet.createObject = {
+            //    highest : 90,
+            //    average :75,
+            //    lowest : 50
+            //};
+            //let fn = greet();
+            //fn();
+
+            // function statement and function expressions 
+            // 1+ 2, a=3
+            //function statemnet
+            //only function stament are hoisted not function expression
+            //greet();
+            //function greet(){
+            //    console.log('hi');
+            //}
+            //fn();
+            //function expression 
+            //let fn = function(){
+            //    console.log('hello');
+            //}
+            //function log(a){
+            //    a();
+            //}
+            //log(function(){
+            //    console.log('hi');
+            //})
+            //objects are passed by reference
+//            function changeLangauge(ln){
+//                ln.mothertounge = 'hindi';
+//                ln.officialLangauge = undefined;
+//            }
+//            function changeValue(a){
+//                a = 4;
+//            }
+//            var a = 3;
+//            var b = {
+//                mothertounge : 'rajasthani',
+//                nationalLangauge : 'hindi',
+//                officialLangauge : 'English'
+//            }
+//            changeLangauge(b);
+//            changeValue(a);
+//            console.log(a);
+//            console.log(b);
+            //every function is a objects 
+//            function a(){
+//                console.log('function');
+//            }
+//            a.na = 'ffff';
+//            console.log(a.na);
+//            var b = function(){
+//                console.log('sfsf');
+//            }
+//            b.n = 'fdfff';
+//            console.log(b.n);
+            //this is global objects in functions points to window object always and in objects inside function it points of objects
+//            function x(){
+//                this.newindia = 'modi';
+//            }
+//            console.log(this);
+//            x();
+//            console.log(this.newindia);
+//            var a = {
+//                na : this,
+//                getDetails : function(){
+//                    this.newIndia = 'modi';
+//                    var self = this;
+//                    console.log(this);
+//                    var x = function(){
+//                         self.newIndia = 'rahul';
+//                    }
+//                    x();
+//                    console.log(this    );
+////                    x();
+//                }
+//            }
+//            a.getDetails();
+//            console.log(this.newIndia);
+            //array can hold integer, string , function , objects and boolean values in it.
+//            var arr = [
+//                1,
+//                true,
+//                {
+//                    name : 'hari',
+//                    age : 21
+//                },
+//                "tony",
+//                function (name){
+//                    console.log('Hello ' + name );
+//                }
+//            ]
+//            arr[4](arr[2].name);
+            //when a function is executed it creates varibale environment , outer environment and this,arguments
+//            function greet(first, last ,end){
+//                console.log(arguments);
+//            }
+//            greet('rajender','kumar','parajapat');
+            //immediately Invoking function expression (IIFE)
+            /*var greeting = function(name){
+                console.log('Hello ' + name);
+            }('hai');
+            (function(name){
+                console.log('hello rajenmder ' + name);
+            }('bhai'));*/
+            /*function add(a,b,n,callback){
+                setTimeout(function(){
+                    console.log('This will be executer later on');
+                }
+                ,4000);
+                
+                callback();
+            }
+            var count = 0;
+            add(1,2,100000,function(){
+                console.log('executed');
+            });*/
+           /* function greet(what){
+                return function(name){
+                    console.log(what + ' ' + name);
+                };
+            };
+            //closures
+            console.log(greet('hi')());*/
+            /*function buildArray(){
+                var arr = [];
+                for( var i = 0; i < 3 ; i++ ){
+                    arr.push(function(){
+                        console.log(i);
+                    });
+                }
+                return arr;
+            }
+            var fs = buildArray();
+            fs[0]();
+            fs[1]();
+            fs[2]();*/
+            
+            /*function buildArray(){
+                var arr = [];
+                for( var i = 0; i < 3 ; i++ ){
+                    arr.push((function(j){
+                        return function(){
+                            console.log(j);
+                        }
+                    }(i)));
+                }
+                return arr;
+            }
+            var fs = buildArray();
+            fs[0]();
+            fs[1]();
+            fs[2]();*/
+            //variable has access to envioronemnt when it was created and points to that variable
+            /*function speakName(language){
+                return function(first,last){
+                    if(language == 'en'){
+                        return 'hello ' + first + ' ' + last;
+                    }
+                    if(language == 'es'){
+                        return 'hola ' + first + ' ' + last;
+                    }
+                }
+            }
+            var speakEnglish = speakName('en');
+            var speakSpanish = speakName('es');
+            var a = speakEnglish('raj','kumar');
+            var b = speakSpanish('gori','shanker');
+            console.log(a);
+            console.log(b);*/
+            /*call apply and bind methods*/
+            //bind method creates a copy of existing method
+            /*var person = {
+                firstName : 'rajender',
+                lastName : 'kumar',
+                getFullName : function(){
+                    return this.firstName + ' ' + this.lastName; 
+                }
+            }
+            function callName(lan){
+                if(lan == 'en'){
+                    console.log('hello ' + this.getFullName());
+                }
+                else{
+                    console.log('hi ' + this.getFullName());
+                }
+            }*/
+//            var copyWithThis = callName.bind(person);
+//            copyWithThis('en');
+//            callName.call(person,'en');
+//            callName.apply(person,['en']);
+            //function borrowing
+//            console.log(person.getFullName.call({firstName : 'gori',lastName : 'shanker'}));
+            //in bind method passing parameter will pass values after this keyword
+            //function currying
+            /*function multi(a,b){
+                return a*b;
+            }
+            var multiplyByTwo = multi.bind(this,2);
+            console.log(multiplyByTwo(3,4));   */
+            // functional Programming
+//            function multiplyIndividual(arr1,arr2){
+//                var arr3 = [];
+//                for( var i = 0; i< arr1.length;i++){
+//                    
+//                }
+//            }
+//            function multiply(arr1,arr2){
+//                var arr3 = [];
+//                for(var i = 0;i< arr1.length ; i++){
+//                    arr3.push(
+//                        multiplyIndividual(arr1[i],arr2);
+//                    )
+//                }
+//            }
+//            var arr1 = [[1,2,3],
+//                        [4,5,6],
+//                        [7,8,9]];
+//            var arr2 = [[9,8,7],
+//                        [6,5,4],
+//                        [3,2,1]];
+//            var arr3 = multiply(arr1,arr2);
+            /*
+            */
+//            var keep = true;
+//            var newpromise = new Promise(function(resolve,reject){
+//                if(keep){
+//                    setTimeout(
+//                    function(){
+//                        resolve(true);
+//                    },10000);
+//                }
+//                else{
+//                    reject('Donnot knwo')
+//                }
+//            });
+//            console.log(newpromise);
+//            newpromise.then(
+//                function(value){
+//                    console.log('kept promise',value);
+//                },
+//                function(reason){
+//                    console.log('didnot kept',reason);
+//                }
+//            );
+//            console.log(newpromise);
+            //prototype inheritance
+            //proto is a property object of object and it can also contain proto bject and so on 
+            /*
+            
+            OBJECT[1]               OBJECT[2]
+             /    *\                  /
+            /       \                /
+           /         \_____________proto{}
+        proto{}
+         /
+        /
+    proto{}
+            */
+            //OBJECT will search property and method in the object itself and if does not find then it will go and search in prototype hirearchry
+            
+//            var person = {
+//                firstname : 'rajender',
+//                __proto__ :{
+//                    lastname :'kumar'
+//                }
+//            }
+//            console.log(person.firstname + ' ' + person.lastname)
+            
+//            var person = {
+//                firstname : 'rajender',
+//                lastname : 'kamar',
+//                getFullName : function(){
+//                    return this.firstname + ' ' + this.lastname
+//                }
+//            }
+//            var animal = {
+////                firstname : 'default',
+//                lastname : 'default'
+//            }
+//            animal.__proto__ = person;
+////            console.log(animal);
+//            for ( var prop in animal){
+//                if(animal.hasOwnProperty(prop)){
+//                    console.log(prop +  ' : ' + animal[prop]);
+//                }
+//            }
+//            function extend(){
+//                var len = arguments.length;
+//                if(len < 2){
+//                    return arguments[0];
+//                }
+//                for( var i = 1;i< len ;i++){
+//                    var obj = arguments[i];
+//                    for( let prop in obj){
+//                        arguments[0][prop] = arguments[i][prop];
+//                    }
+//                }  
+//                return arguments[0];
+//            }
+//            var gori = {
+//                firstname :'rajender',
+//                getFirstname : function(){
+//                    return firstname;
+//                }
+//            }
+//            var govind = {
+//                lastname : 'kumar',
+//                getLastname : function(){
+//                    return lastname;
+//                }
+//            }
+//            var deep = {
+//                contact : '+918561969937'
+//            }
+//            var full = {}
+//            full = extend(full)
+//            console.log(full);
+            
+//            
+           /*function Person(firstname,lastname){
+               console.log(this)
+               this.firstname = firstname;
+               this.lastname = lastname;
+               console.log(this);
+           }
+          var john = new Person('john','cela');
+          var jaen = new Person('jaen','dom')*/
+            // function constructor is a function that is used to create object using new operators .new 
+            // object creates a empty object and this keyword points to this empty object.
+//            function Person(firstname,lastname){
+//                console.log(this);
+//               this.firstname = firstname;
+//               this.lastname = lastname;
+//                console.log(this);
+//           }
+//           Person.prototype.getFullName = function(){
+//               console.log(this);
+//               return this.firstname + ' ' + this.lastname;
+//           }
+//          var john = new Person('john','cela');
+//            console.log(john)
+//          var jaen = new Person('jaen','dom');
+//            console.log(jaen);
+//        
+//        Person.prototype.getFormalName = function(){
+//               console.log(this);
+//               return this.lastname + ' ,' + this.firstname ;
+//           }
+            
+            
+            //function are objects in javascript and it has code name and prototype property availbale in this. prototype are used only with function constructor
+        
+           // INSTANCE WILL SEARCH IN THEIR OWN PROTOTYPE USING __PROTO__ AND THEN IT WILL GO AND SEARCH IN THIER FUNCTION CONSTRUCTOR OBJECT ITSELF.
+        // PROTYPE SAVES FUNCTION MEMORY
+        // function object points to property and methods of function.prototype object
+        
+        /*String.prototype.Reverse = function(){
+            var reverseString = '';
+            var str = this;
+            console.log(str)
+            for( var i = str.length-1; i>=0 ;i--){
+                reverseString = reverseString +  str.charAt(i);
+            }
+            return reverseString;
+        }
+        
+        var str = new String('hello');
+        console.log(str.Reverse());*/
+        
+        /*arrays are name value pair behave like objects so better to use for loop standard*/
+        
+//        var boys = ['ab','abb','aba','abb'];
+//        for ( var prop in boys){
+//            console.log(prop + ' : ' + boys[prop]);
+//        }
+//        Array.prototype.reverseArray = function(){
+////            var arr = [];
+////            for( )
+//        }
+//        for ( var prop in boys){
+//            console.log(prop + ' : ' + boys[prop]);
+//        }
+            
+        //POLYFILL -- you write some code so that it fills the gap between older version of browser and new version of broweser that the javascript engines are lacking.
+            
+        //prototype inheritance
+//        if(!Object.create){
+//            Object.create = function(o){
+//                if(arguments.length > 1){
+//                    throw new Error("cannot create object give only one parameter");
+//                }
+//                Function F();
+//                F.prototype = o;
+//                return new F();
+//            }
+//        }
+//        
+//        var person = {
+//            firstname : 'Default',
+//            lastname : 'Default',
+//            getFullName : function(){
+//                return this.firstname + ' ' + this.lastname;
+//            }
+//        }
+//        
+//        var jon = Object.create(person);
+//        console.log()
+//            
+            //inheritance with classes 
+//            class Person {
+//                constructor(firstname , lastname){
+//                    this.firstname = firstname;
+//                    this.lastname = lastname;
+//                }
+//                greet(){
+//                    console.log('Hi ' + this.lastname);
+//                }
+//            }
+//            class Employee extends Person {
+//                constructor(firstname, lastname){
+//                    super(firstname,lastname);
+//                }
+//                greetInOffice(){
+//                    console.log('Hi ' + this.lastname + ' , ' + this.firstname);
+//                }
+//            }
+//            var jon = new Person('John','Kumar');
+//            jon.greet();
+//            var kumar = new Employee('raj','Doe');
+//            kumar.greetInOffice();
+            
+            //typeof gives type of input parameter 
+            //instanceof gives if instance is type of object
+           // type of undefined is undefined and typeof null is an object
+//            function Person(first){
+//                
+//            }
+//            var ppl = new Person('jpohn')
+//            console.log(ppl instanceof Person)
+            
+            //use strict will raise errors on unthoughtful code and it can prevent fture bugs also like without defining a variable assign a value will give error in struct mode
+            //Every function has a prototype property which is a empty object
+            
+//            var s = (a,b)=>{
+//                return a;
+//            }
+//            var x = {
+//                x : 1,
+//                y : function(){
+//                    console.log(this);     //refers to object
+//                    (function(){
+//                        console.log();  //refers to window object
+//                    }())
+//                }
+//            }
+//            x.y();
+//            var t = function(a,b){
+//                return function(x){
+//                    return this;
+//                }
+//            }
+//            var f= t();
+//            console.log(f());
+            
+            //prototype examples
+            /*function Circle(radius) {
+                this.radius = radius;
+            }
+
+            Circle.prototype.area = function () {
+                var radius = this.radius;
+                return Math.PI * radius * radius;
+            };
+
+            Circle.prototype.circumference = function () {         
+                return 2 * Math.PI * this.radius;
+            };
+
+            var circle = new Circle(5);
+            var circle2 = new Circle(10);
+            console.log(circle)
+
+            circle.area() // 78.53981633974483
+            circle.diameter() // Uncaught TypeError: circle2.diameter is not a function*/
+            
+//            function Vehicle(make , model ,color){
+//                this.make = make;
+//                this.model = model;
+//                this.color = color;
+//                this.getName = function(){
+//                    return this.make + ' ' + this.model;
+//                }
+//            }
+////            console.log(Vehicle.prototype);
+//            var car = new Vehicle('toyta','correllla','Black');
+//            var car2 = new Vehicle('Mercedes','correllla','Red');
+//            console.log(car.__proto__ == Vehicle.prototype)
+//            //Primitive Type protypes are not shared among instances only reference type prototype objects are shared 
+//            Vehicle.prototype.year = 2015;
+//            car2.year = 2019;
+//            console.log(car)
+//            console.log(car2)
+//            
+//            Vehicle.prototype.state = ['RJ','PN','UP']
+//            car.state.push('MH');
+//            console.log(car);
+//            console.log(car2);
+//            
+            //class and function constructor have some disimilraties classes aren't hoisted and cannot use without new keyword, strict mode always
+            
+//            var foo = {
+//   title: 'world',
+//   show() {
+//       console.log(this);
+//      return ['', ''].map(() => 'hello ' + this.title);
+//   }
+//};
+//            console.log(foo.show())
+            
+//            const total = [0, 1, 2, 3].reduce((sum, value) => { sum + value, 1});
+           /* const a = ['1','7','11'].map(parseInt);
+            console.log(a);*/
+           /* All values are truthy except for: false, 0, "" (empty string), null, undefined, and NaN.
+            Confusingly, this means that the string "false", the string "0", an empty object {}, and an empty array [] are all truthy. You can double check this by passing an object into the Boolean function (e.g. Boolean("0");).*/
+            //closures
+            var y = function closure(){
+                let a = 10;
+                return function access(){
+                    console.log(a);
+                }
+            }
+            var x = y();
+            x();
+        
+//        alert("Hello Wecome to Shop");
+//        var name = prompt("Username : ", "Sri Krishna");
+//        var message = 'Are You  using Latest Version of Chrome';
+//        if(!confirm(message)){
+//            alert("download latest version");
+//        }
+//        else{
+//            document.write("<font color = 'blue'><center>Hello " + name + "</center></font>")
+//        }
+            
+//        if(document.images){
+//            var image1 = new Image();
+//            var image2 = new Image();
+//            image1.src = 'C:\\Users\\I354770\\Pictures\\freightliner-inspiration-truck-w1680xh945-cutout.jpg'
+//            image2.src = 'C:\\Users\\I354770\\Pictures\\mercedes-benz-futuretruck-w1680xh945-cutout.jpg'
+//        }
+//            else{
+//                image1 = ''
+//                image2 = ''
+//            }
+//            var slideshow = ["C:\\Users\\I354770\\Pictures\\freightliner-inspiration-truck-w1680xh945-cutout.jpg",
+//                 "C:\\Users\\I354770\\Pictures\\mercedes-benz-futuretruck-w1680xh945-cutout.jpg",
+//                             "C:\\Users\\I354770\\Pictures\\freightliner-inspiration-truck-2-w1680xh945-cutout.jpg"
+//            ]
+//            var ImageCount = slideshow.length;
+//            var currentPic = 0;
+//            function moveBack(){
+//                if(currentPic == 0){
+//                    currentPic = ImageCount - 1;
+//                }
+//                else{
+//                    currentPic--;
+//                }
+//                document.slide.src = slideshow[currentPic];
+//            }
+//            function moveForward(){
+//                if(currentPic == ImageCount - 1){
+//                    currentPic = 0;
+//                }
+//                else{
+//                    currentPic++;
+//                }
+//               document.slide.src = slideshow[currentPic]; 
+//            }
+//            setInterval(function(){
+//                if(currentPic == ImageCount - 1){
+//                    currentPic = 0;
+//                }
+//                else{
+//                    currentPic++;
+//                }
+//               document.slide.src = slideshow[currentPic]; 
+//            },2000);
+//            if(document.images){
+//                var text1 = new Image();
+//                var text2 = new Image();
+//                text1.src = "C:\\Users\\I354770\\Pictures\\freightliner-inspiration-truck-w1680xh945-cutout.jpg"
+//                text2.src = "C:\\Users\\I354770\\Pictures\\mercedes-benz-futuretruck-w1680xh945-cutout.jpg"
+//            }
+//            else{
+//                text1.src = ""
+//                text2.src = ""
+//            }
+//            function openWindow(img){
+//                window.open(img,"image",'width=30px height=40px toolbar = yes scrollbar = yes');
+//            }
+            function openWindow(page){
+//                var openwindow = window.open(page,"image",'width=30px height=40px toolbar = yes scrollbar = yes');
+                history.back();
+            }
+            function closeWindow(){
+//                if(openWindow){
+//                    
+//                }
+                history.forward()
+            }
+            var offset = 0;
+            var bannerRunning = false;
+            var text = "How do you like this T-Banner"
+            var pause = 1000
+            var speed = 100
+            var timerID = null
+            function startBanner(){
+                stopBanner();
+                showBanner();
+            }
+            function stopBanner(){
+                if(bannerRunning){
+                    clearTimeout(timerID)
+                    bannerRunning = false
+                }
+            }
+            function showBanner(){
+                document.getElementById('put').innerHTML = window.status;
+                if(offset < text.length){
+                    var partialMessage = text.substring(0,offset+1);
+                    window.status = partialMessage;
+                    offset++;
+                    timerID = setTimeout("showBanner()",speed)
+                    bannerRunning = true
+                }
+                else{
+                    offset = 0;
+                    timerID = setTimeout("showBanner()",pause);
+                    bannerRunning = true;
+                }
+            }
+            console.log(window.status)
+            
+        </script>
+        
+    </head>
+<!--    <body background = "C:\\Users\\I354770\\Pictures\\photo-1522409640003-31c21bd5e696.jpg">-->
+    <body onload="showBanner()">
+        <marquee id = "put">ded</marquee>
+<!--
+        <table>
+            <tr>
+                <td><img src = "C:\Users\I354770\Pictures\techmemes-incorrectpassword.jpg"></td>
+                <td>Ye Olde Book Shoppe</td>
+                <td><img src = "C:\Users\I354770\Pictures\techmemes-incorrectpassword.jpg"></td>
+            </tr>
+        </table>
+        <img  src = "C:\\Users\\I354770\\Pictures\\freightliner-inspiration-truck-w1680xh945-cutout.jpg" alt = "Diamliar" name = 'slide' >
+        <a href = "javascript:moveBack()">Back&lt;&lt;</a>
+        <a href = "javascript:moveForward()">Next&gt;&gt;</a>
+-->
+<!--    
+        <a href ="nextpage.htm"
+        onMouseover = "document.pic.src =image1.src"
+        onMouseout = "document.pic.src =image2.src" />
+        <img src = "C:\Users\I354770\Pictures\67095113_10156664568752799_2900092502444867584_n.jpg" name = "pic" />
+-->
+<!--
+        <table>
+            <tr>
+                <td><a><img  src = "C:\\Users\\I354770\\Pictures\\freightliner-inspiration-truck-w1680xh945-cutout.jpg" onmouseOver = "document.zoomer.src = text1.src" width = "25px" height = "25px" alt = "mousehover"/></a></td>
+                <td><a><img  src = "C:\\Users\\I354770\\Pictures\\mercedes-benz-futuretruck-w1680xh945-cutout.jpg" onmouseOver = "document.zoomer.src = text2.src" width = "25px" height = "25px"  alt = "mousehover"/></a></td>
+            </tr>
+        </table>
+        <img src = "" name = "zoomer">
+-->
+<!--
+    <img  src = "C:\\Users\\I354770\\Pictures\\mercedes-benz-futuretruck-w1680xh945-cutout.jpg" ondblclick="openWindow('C:\\Users\\I354770\\Pictures\\mercedes-benz-futuretruck-w1680xh945-cutout.jpg')" />
+        <a href = "javascript:openWindow('jsscript.html')">open</a>
+        <a href = "javascript:closeWindow('jsscript.html)">close</a>
+-->
+    </body>
+    <footer></footer>
+    <script>
+//        var bgOffset = 0;
+//            var bgOffsetObject = eval('document.body')
+//            function scrollWindow(maxSize){
+//                if(bgOffset < maxSize){
+//                    bgOffset++;
+//                    bgOffsetObject.style.backgroundPosition = "0 " + bgOffset
+//                }
+//                else{
+//                    bgOffset = 0
+//                }
+//                console.log('he')
+//            }
+//            setInterval("scrollWindow(50)",50);
+        //COOKIE
+//        var expiredate= new Date();
+//        expiredate.setTime(expiredate.getTime() + (30*24*60*60*1000))
+//        var backcolor = getCookie("bgcolor")
+//        if (backcolor == null)
+//        {
+//            backcolor = prompt("What is your favorite background color?")
+//            setCookie("bgcolor", backcolor, expiredate)
+//        }
+//        document.bgColor=backcolor
+//        function setCookie(name, value, expires, path, domain, secure)
+//        {
+//            var curCookie = name + "=" + escape(value) +
+//            ((expires) ? "; expires=" + expires.toGMTString() : "") +
+//            ((path) ? "; path=" + path : "") +
+//            ((domain) ? "; domain=" + domain : "") +
+//            ((secure) ? "; secure" : "")
+//            document.cookie = curCookie
+//        }
+//        function getCookie(cookiename){
+//                var prefix = cookiename + "="
+//                var cookieStartIndex = document.cookie.indexOf(prefix)
+//                if (cookieStartIndex == -1)
+//                return null
+//                var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex+
+//                prefix.length)
+//                if (cookieEndIndex == -1)
+//                cookieEndIndex = document.cookie.length
+//                return unescape(document.cookie.substring(cookieStartIndex
+//                +prefix.length, cookieEndIndex))
+//        }
+//        
+    </script>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+	<style>
+		#circle1{
+			width:100px;
+			height:100px;
+			background-color:red;
+			position:absolute;
+			top:0px;
+			left:40%;
+			border-radius:10%;
+			animation:spin 1s linear infinite;
+		}
+		#circle2{
+			width:100px;
+			height:100px;
+			position:absolute;
+			top:40%;
+			left:0px;
+			background-color:green;
+			border-radius:10%;
+			animation:spin 1s linear infinite;
+		}
+		#circle3{
+			width:100px;
+			height:100px;
+			position:absolute;
+			bottom:0px;
+			left:40%;
+			background-color:black;
+			border-radius:10%;
+			animation:spin 1s linear infinite;
+		}
+		#circle4{
+			width:100px;
+			height:100px;
+			position:absolute;
+			top:40%;
+			right:0px;
+			background-color:yellow;
+			border-radius:10%;
+			animation:spin 1s linear infinite;
+		}
+		@keyframes spin{
+			from{-webkit-transform:rotateZ(0deg);}
+
+			to{-webkit-transform:rotateZ(360deg);} 
+		}
+		@keyframes newmove{
+			from{left:0px;}
+
+			to{left:100px;} 
+		}
+		#middleCircle{
+			width:300px;
+			height:300px;
+			position:absolute;
+			top:20%;
+			right:20%;
+			border:1px solid black;
+			border-radius:100%;
+		}
+		#mainCircle{
+			width:500px;
+			height:500px;
+			position:relative;
+			top:10%;
+			left:35%;	
+			border:1px solid #f44280;
+			border-radius:100%;
+		}
+		@font-face{
+			font-family:'digital_clock_font';
+			src:url("http://localhost:8000/digital-7.ttf");
+		}
+		#rect1{
+			width:200px;
+			height:100px;
+			position:absolute;
+			font-family:digital_clock_font;
+			font-size:50px;
+			text-align:center;
+			top:0%;
+			left:0%;
+			background-color:red;
+			border:3px solid black;
+		}
+		#rect2{
+			width:200px;
+			height:100px;
+			position:absolute;
+			bottom:0%;
+			font-family:digital_clock_font;
+			font-size:50px;
+			text-align:center;
+			left:0%;
+			background-color:green;
+			border:3px solid black;
+		}
+		#rect3{
+			width:200px;
+			height:100px;
+			position:absolute;
+			bottom:0%;
+			font-family:digital_clock_font;
+			font-size:50px;
+			text-align:center;
+			right:0%;
+			color:white;
+			background-color:black;
+			border:3px solid black;
+		}
+		#rect4{
+			width:200px;
+			height:100px;
+			position:absolute;
+			font-family:digital_clock_font;
+			font-size:50px;
+			text-align:center;
+			top:0%;
+			right:0%;
+			background-color:yellow;
+			border:3px solid black;
+		}
+
+		
+	</style>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		var turn = 1;
+		function fastly(){ 
+			 document.getElementsById("circle1").style.color ="blue";
+			 //document.getElementsById("circle1").alert("hello');
+			
+		}
+		$(document).ready(function () {
+			$('#rect1').text('0');
+			$('#rect2').text('0');
+			$('#rect3').text('0');
+			$('#rect4').text('0');
+			
+    			/*$("#logbtn").click(function () {
+	  			var user = document.getElementById('user').value;
+				var pass = document.getElementById('pwd').value;
+				if(user =='rjkumar1536' && pass =='123456'){
+					$('#content').css("background-color","green");
+					$('#content').text('Login Successful');
+				}
+				else{
+					$('#content').css("background-color","red");
+					$('#content').text('Either Username or Password is Wrong');
+				}
+			});*/
+		});
+	</script>
+	</head>
+	<body>
+		<div id="mainCircle">
+			<div id="circle1" ontouchstart="fastly()"></div>
+			<div id="circle2"></div>
+			<div id="circle3"></div>
+			<div id="circle4"></div>
+			<div id = "middleCircle"></div>
+		</div>
+		<div>
+			<div id="rect1"></div>
+			<div id="rect2"></div>
+			<div id="rect3"></div>
+			<div id="rect4"></div>
+		</div>
+		<div id ="main"></div>
+		
+	</body>
+</html>

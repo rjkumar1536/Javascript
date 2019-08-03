@@ -1,0 +1,75 @@
+<html>
+	<head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+	</style>
+	<script>
+		var request;
+		function updateUI(productsData){
+			console.log(productsData);
+			$("#productDetails").empty();
+			$.each(productsData.products,function(index,value){
+				var row ="<tr>";
+				row += "<td>" + value.productId + "</td>";
+				row += "<td>" + value.productName + "</td>";
+				row += "<td>" + value.unitPrice + "</td>";
+				row += "<td>" + value.stock + "</td>";
+				row += "</tr>";
+				$(row).appendTo("#productDetails");
+			});
+		}
+		function productCallBack(){
+			if(request.readyState==4 && request.status==200){
+				var response = request.responseText;
+				eval("var result="+response+";");
+				$("#productTable").slideDown("fast");
+				updateUI(result);
+			}
+		}
+		$(document).ready(function(){
+			$("#categoryList").change(function(event){
+				//var selected = $("#categoryList:selected").text();
+				var index = document.getElementById("categoryList").selectedIndex;
+				var selected = document.getElementsByTagName("option")[index].value;
+				if(selected.startsWith("--")){
+					$("#productTable").slideUp("fast");
+					return;
+				}
+				else{
+					var url ="http://localhost:8000/"+ selected+".json";
+					request = new XMLHttpRequest();
+					request.open("GET",url);
+					request.onreadystatechange = productCallBack;
+					request.send();	
+				}
+				
+			});
+			var cat = ["--Select","Markers","Pens"];
+			$.each(cat,function(index,value){
+				$("<option>" + value +"</option>").appendTo("#categoryList");
+			});
+			$("#productTable").slideUp("fast");
+		});
+		
+	</script>
+	</head>
+	<body>
+		<h1>Filling table</h1>
+		<div class="options">
+			Choose :<select id ="categoryList"></select>
+		</div>
+		<div class ="detail">
+			<table id ="productTable">
+				<thead>
+					<tr>
+						<th>Product ID</th>
+						<th>Product Name</th>
+						<th>Unit Price</th>
+						<th>Stock Level</th>
+					</tr>
+				</thead>
+				<tbody id ="productDetails"></tbody>
+			</table>
+		</div>
+	</body>
+</html>

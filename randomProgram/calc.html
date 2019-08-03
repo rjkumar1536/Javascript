@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		table{
+			border:5px solid red;
+		}
+
+		td{
+			border:1px solid black;
+			text-align: center;
+			width:100px;
+			height:50px;
+			background: black;
+			
+		}
+		td:not(#clear){
+			font:35px solid black;
+			color:white;
+		}
+		#clear{
+			color:white;
+		}
+		#display{
+			height:100px;
+			text-align: right;
+			padding: 0px;
+		}
+
+	</style>
+	<script type="text/javascript" src="https://unpkg.com/mathjs@5.0.4/dist/math.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+	<script>
+		$(document).ready(function() {
+				var expr = "";
+				pass('digit0');pass('digit1');pass('digit2');pass('digit3');pass('digit4');pass('digit5');pass('digit6');
+				pass('digit7');pass('digit8');pass('digit9');pass('plus');pass('minus');pass('divide');pass('multi');
+				pass('decimal');pass('equal');pass('clear');
+				function pass(id){
+					document.getElementById(id).addEventListener("click",function(){
+						if(expr == ""){
+							$("#display").text('');
+						}
+						execute("#" + id);
+					});
+				}
+
+				function execute(id){
+					if(id == "#equal" || id == "#clear"){
+						if(id == "#clear"){
+							$("#display").text('0');
+						}
+						else {
+							console.log(expr);
+							try{
+								$("#display").text(math.eval(expr));
+							}
+							catch(error){
+								$("#display").text('Error:404');
+							}
+							
+						}
+						expr = "";
+					}
+					else{
+						if(id =="#minus"){
+							expr = expr + '-';
+						}
+						
+						else if(id == "#multi"){
+							expr = expr + '*';
+						}
+						else if(id =="#divide"){
+							expr = expr + '/';
+						}
+						else{
+							expr = expr + $(id).text();
+						}
+						
+						$("#display").append($(id).text());
+					}
+				}
+		});
+
+	</script>
+</head>
+<body>
+	<center>
+		<table>
+			<tr>
+				<td id ="display" colspan=4 >0</td>
+			</tr>
+			<tr>
+				<td colspan=3></td>
+				<td id = 'clear' >CLEAR</td>
+			</tr>
+			<tr>
+				<td id = "digit7">7</td>
+				<td id = "digit8" >8</td>
+				<td id = "digit9" >9</td>
+				<td id = "divide" >&divide;</td>
+			</tr>
+			<tr>
+				<td  id = "digit4">4</td>
+				<td  id = "digit5">5</td>
+				<td  id = "digit6">6</td>
+				<td  id = "multi">&times;</td>
+			</tr>
+			<tr>
+				<td id = "digit1" >1</td>
+				<td id = "digit2" >2</td>
+				<td id = "digit3" >3</td>
+				<td id = "minus" >&minus;</td>
+			</tr>
+			<tr>
+				<td id = "decimal" >.</td>
+				<td id = "digit0" >0</td>
+				<td id = "equal" >=</td>
+				<td id = "plus">+</td>
+			</tr>
+		</table>
+	</center>
+</body>
+</html>

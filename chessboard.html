@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <script>
+        function grid( size = 8 , width , height){
+            width = width || size;
+            height = height || size;
+            let zigZag = false;
+            for( let i = 0; i < width ; i++){
+                for( let j = 0 ;j < height ; j++ ){
+                    if(!zigZag){
+                        document.write('&nbsp;&nbsp;&nbsp;')
+                        document.write('#');
+                    }
+                    else{
+                        document.write('#');
+                        document.write('&nbsp;&nbsp;&nbsp;')
+                    }
+                }
+                zigZag = zigZag ? false : true;
+                document.write('</br>');
+            }
+        }
+        grid();
+    </script>
+    <body>
+        <center>
+        </center>
+    </body>
+    <footer>
+    </footer>
+</html>
