@@ -4,7 +4,58 @@
         </title>
     </head>
     <script>
-        
+        function listToArray(list){
+            let arr = [];
+            while(list.value != undefined){
+                arr.push(list.value);
+                list = list.res;
+            }
+            return arr;
+        }
+        function arrayToList(arr){
+            let list = {};
+            for( let i = arr.length-1 ;i >= 0 ;i-- ){
+                list = prepend(arr[i],list)
+            }
+            return list
+        }
+        function prepend(number,list){
+            let newObj = {}
+            newObj.value = number
+            newObj.res = list;
+            return newObj
+        }
+
+        function nth(index,list){
+            let count = 0;
+            let l;
+            l = Object.create(list)
+            while(index != count){
+               l = l.res
+               count++;
+            }
+            if(count < index){
+                return undefined;
+            }
+            return l.value;
+            
+        }
+        function nthRecursion(index,list,count = 0){
+            if(count == index){
+                return list.value
+            }
+            count++;
+            let l;
+//            l = Object.create(list)
+            list = list.res
+            return nthRecursion(index,list,count);
+        }
+        let arr = [1,2,3]
+        let list = arrayToList(arr)
+        console.log(nth(0,list));
+        console.log(listToArray(list))
+        console.log(nthRecursion(1,list))
+        console.log(listToArray(list))
     </script>
     <body>
         <center>
