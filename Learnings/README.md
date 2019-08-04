@@ -13,3 +13,16 @@ console.log(null == undefined);
 // → true
 console.log(null == 0);
 // → false
+
+
+There’s an Object.assign function that copies all properties from one object
+into another.
+
+let objectA = {a: 1, b: 2};
+Object.assign(objectA, {b: 3, c: 4});
+console.log(objectA);
+// → {a: 1, b: 3, c: 4}
+
+We saw push and pop, which add and remove elements at the end of an array,
+earlier in this chapter. The corresponding methods for adding and removing
+things at the start of an array are called unshift and shift.

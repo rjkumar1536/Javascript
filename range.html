@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <script>
+        function range(start,end, step = 1){
+            let arr = [];
+            for ( let i = start ; ; ){
+                if(step < 0){
+                    if( i < end){
+                        break;
+                    }
+                }
+                else{
+                    if(i > end){
+                        break;
+                    }
+                }
+                arr.push(i);
+                i = i + step;
+            }   
+            return arr;
+        }
+        function sum(arr){
+            let count = 0;
+            for ( let ele of arr){
+                count = count + ele;
+            }
+            return count;
+        }
+        console.log(sum(range(5,15,2)));
+    </script>
+    <body>
+        <center>
+        </center>
+    </body>
+    <footer>
+    </footer>
+</html>

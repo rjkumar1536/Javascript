@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <script>
+        function compare(arr1 ,arr2){
+            if(arr1.length != arr2.length){
+                return false;
+            }
+            for ( let i = 0; i < arr1.length ; i++){
+                if(arr1[i] != arr2[i]){
+                    return false;
+                }
+            }
+            return true;
+        }
+        function deepEqual(objA, objB){
+            if( objA=== objB) return true;
+            if( objA == null || objB == null || typeof objA != 'object' || typeof objB != 'object' ) return false;
+            let propA = Object.keys(objA)
+            let propB = Object.keys(objB)
+            
+            if(propA.length != propB.length) return false;
+            for ( let prop of propA){
+                if(!propB.includes(prop) || !deepEqual(objA[prop],objB[prop])) return false;
+            }
+            return true
+        }
+        let objA = {
+            name : "rajender",
+            contact : "8561969937",
+            village : "6p",
+            others : {
+                name : "rajender",
+                contact : "8561969937",
+                village : "6p"
+            }
+        }
+        let objB = {
+            name : "rajender",
+            contact : "8561969937",
+            village : "6p",
+            others : {
+            name : "rajender",
+            contact : "8561969937",
+            village : "6p"
+            }
+        }
+        console.log(deepEqual(objA,objB));
+    </script>
+    <body>
+        <center>
+        </center>
+    </body>
+    <footer>
+    </footer>
+</html>
