@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <script>
+        function everyThing(arr, test){
+            for ( let ele of arr){
+                if( !test(ele)){
+                    return false;
+                }
+            }
+            return true;
+        }
+        function everySome(arr ,test){
+            return !arr.some((a) => !test(a))
+        }
+        console.log(everySome([2,4,6,8,16],n => {
+            if( n%2 == 0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }))
+    </script>
+    <body>
+    </body>
+    <footer>
+    </footer>
+</html>

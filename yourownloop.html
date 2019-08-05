@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <script>
+        function test(n){
+            if( n > 10 ){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        function update(n){
+            return n+1;
+        }
+         function body(n){
+             if(n%2 == 0){
+                 return "even";
+             }
+             else{
+                 return "odd";
+             }
+         }
+        function loop(value, test, update , body){
+            for ( let i = value ; test(i) ; i = update(i)){
+                console.log(body(i));
+            }
+        }
+        loop(2,test,update,body);
+    </script>
+    <body>
+    </body>
+    <footer>
+    </footer>
+</html>
