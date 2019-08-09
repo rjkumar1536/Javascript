@@ -37,23 +37,23 @@
                 }
                 this.x++;
                 if(this.x == this.matrix.width){
-                    return {value : {x : this.x , y : this.y , value : this.matrix.get(x,y)},done : false}
                     this.x = 0
                     this.y++;
                 }
-               
+                return {value : {x : this.x , y : this.y , value : this.matrix.get(this.x,this.y)},done : false}
             }
         }
         Matrix.prototype[Symbol.iterator] = function (){
             return new MatrixIterator(this);
         }
-        var matrix = new Matrix(3,4, (x,y) => `value ${x} , ${y}`);
-        console.log(matrix)
+        let matrix = new Matrix(3,4, (x,y) => `value ${x} , ${y}`);
+        var p = new MatrixIterator(matrix);
 //        var y = new MatrixIterator(x);
+        for (let q of matrix){
+            console.log(q.value)
+        }
         
-       for ( let {x ,y , value} of matrix){
-           console.log(x,y,value)
-       }
+       
 //        while(y.next()){
 //            console.log(y.next())
 //        }
