@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <script>
+        class Vec {
+            constructor( x , y){
+                this.x = x;
+                this.y = y;
+            }
+        }
+        Vec.prototype.plus = function(a){
+            return  `${a.x + this.x}i + ${a.y + this.y}j`; 
+        }
+        Vec.prototype.minus = function(a){
+            return  `${a.x - this.x}i + ${a.y - this.y}j`;
+        }
+        Vec.prototype.length = Math.sqrt(this.x * this.x + this.y * this.y);
+        var a = new Vec(3,4);
+        var b = new Vec(11,9);
+        console.log(a.minus(b));
+        
+    </script>
+    <body>
+    </body>
+    <footer>
+    </footer>
+</html>
