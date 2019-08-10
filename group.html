@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <script>
+       class Group{
+           constructor(){
+               this.group = []
+           }
+            static from(arr){
+                let group = new Group();
+                for ( let ele of arr){
+                    group.add(ele);
+                }
+                return group;
+            }
+       }
+        Group.prototype.add = function(x){
+            if( this.group.indexOf(x) === -1){
+                this.group.push(x);
+            }
+        }
+        Group.prototype.delete = function(){
+            if(this.group.indexOf(x) !== -1){
+                this.group.remove(x);
+            }
+        }
+        Group.prototype.has = function(n){
+            if(this.group.indexOf(n) !== -1){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        class GroupInterator{
+            constructor(group){
+                this.group = group.group;
+                this.index = 0;
+            }
+            next(){
+                if(this.index == this.group.length){
+                    return {done : true};
+                    console.log('ff')
+                }
+                let result = {value : this.group[this.index] , done : false}
+                this.index++;
+                return result;
+            }
+        }
+        Group.prototype[Symbol.iterator] = function(){
+            return new GroupInterator(this);
+        }
+        let group = new Group() 
+        group.add(10);
+        for ( let value of group){
+            console.log(value);
+        }
+       
+    </script>
+    <body>
+    </body>
+    <footer>
+    </footer>
+</html>
