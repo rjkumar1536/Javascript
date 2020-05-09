@@ -1,0 +1,41 @@
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .addItem {
+        width : 100%;
+        margin : 0 auto;
+        background-color: teal;
+        height : 70px;
+    }
+    
+    .btn{
+        margin: 10px;
+        width : 15%;
+        height : 40px;
+        font-size:7px;
+    }
+    .input{
+        margin: 10px;
+        width : 30%;
+        height : 30px;
+        font-size: 10px;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .addItem {
+        width : 80%;
+        margin : 0 auto;
+        background-color: teal;
+        height : 100px;
+    }
+    
+    .btn{
+        margin: 20px;
+        width : 10%;
+        height : 50px;
+    }
+    .input{
+        margin: 20px;
+        width : 40%;
+        height : 50px;
+    }
+  }

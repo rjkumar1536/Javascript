@@ -1,0 +1,35 @@
+img {
+    height : 50vh;
+    width : 50vw;
+}
+
+.carousel-container{
+    position: relative;
+    width : 50%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-slide{
+    display: flex;
+}
+
+#prevBtn{
+    position: absolute;
+    top:50%;
+    left : 5%;
+    color : white;
+    font-size: 3vw;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#nextBtn{
+    position: absolute;
+    top:50%;
+    right : 5%;
+    color : white;
+    font-size: 3vw;
+    z-index: 10;
+    cursor: pointer;
+}

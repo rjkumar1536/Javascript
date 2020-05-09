@@ -1,0 +1,19 @@
+.user input {
+    outline : none;
+    transition: all 0.5s;
+    margin-top : 100%;
+    margin-left : 20px;
+    margin-right : 20px;
+    color : white;
+    background-color: rgba(16, 75, 204, 0.301);
+}
+.user input:focus{
+    border : 1px solid rgba(91, 184, 228, 0.575)
+}
+
+.user{
+    border : 1px solid #ccc;
+    height : 80%;
+    box-shadow: 0 2px 3px #ccc;
+    background-color: rgba(16, 75, 204, 0.301);
+}

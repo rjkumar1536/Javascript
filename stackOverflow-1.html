@@ -1,0 +1,59 @@
+<html>
+ <head></head>
+    <style>
+    div {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+       "title title title"
+       "classa classb classc";
+    align-content: center;
+  }
+
+ .photoa {
+     grid-area: classa;
+     width: 175px;
+     height: 175px;
+     background: url("loodo.png");
+     opacity: .6;
+  }
+
+ .photob {
+     grid-area: classb;
+     width: 175px;
+     height: 175px;
+     background: url("loodo.png") no-repeat 0;
+     opacity: .6;
+  }
+
+ .photoc {
+     grid-area: classc;
+     width: 175px;
+     height: 175px;
+     background: url("loodo.png") no-repeat 0;
+     opacity: .6;
+  }
+
+ @media (max-width: 770px) {
+     main {
+       display: grid;
+/*       row-gap: 10px;*/
+       grid-template-columns: 1fr;
+       grid-template-rows: repeat(4, 1fr);
+       grid-template-areas:
+          "title"
+          "classa"
+          "classb"
+          "classc";
+  }
+
+</style>
+ <body>
+ <div>
+    <h3 class="title">Click image below</h3>
+    <a href="classa.html" class="photoa"> <img src="loodo.png"/></a>
+    <a href="classb.html" class="photob"> <img src="loodo.png"/></a>
+    <a href="classc.html" class="photoc"> <img src="loodo.png"/></a>
+ </div>
+ </body>
+ </html>

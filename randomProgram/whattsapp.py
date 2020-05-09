@@ -68,5 +68,3 @@ for user in target:
 		# time.sleep(1)
 		# get_element('//*[@id="app"]/div/div/div[1]/div[2]/span/div/span/div/div/div[2]/span[2]/div/div/span').click()
 		# time.sleep(1)
-
-

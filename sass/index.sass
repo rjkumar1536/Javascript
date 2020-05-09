@@ -1,0 +1,39 @@
+//sass omits curly braces and ;
+@mixin btn($color , $color-hover)
+    color : $color
+    &:hover
+        color : $color-hover
+$border : 1px solid #9799a7
+$convert : text-transform 
+.new
+    color: #ff7b29
+    font-weight: bold
+    @media only screen and (max-width :480px)
+        display : none
+    span
+        #{$convert}: uppercase
+.portfolio
+    border: $border
+    ul
+        list-style: none
+        border : $border
+        &::after
+            content : ""
+            display : table
+            clear   : both
+    li
+        float: left
+        font :
+            family : Baskerville, Palatino, serif
+            style : italic
+            weight : normal
+            size : 100px /10 + 5px * 0 - 5px + 5px
+.starbucks
+    @extend  .portfolio
+    li
+        clear : left
+        font-size : 50px
+        +btn(red, yellow)
+        
+// use % placeholder selector to avoid building a bunch of unused classes and only for extension purposess
+

@@ -1,0 +1,115 @@
+:root {
+    --dark-grey: #333333;
+    --light-grey: #555;
+  }
+  * {
+    font-family: Roboto;
+    box-sizing: border-box;
+  }
+.menu{
+    display: flex;
+    justify-content: center;
+    background-color: #E0E0E0;
+    border-top: 1px solid #CFCFCF;
+    border-bottom: 1px solid #CFCFCF;
+    flex-wrap: wrap;
+}
+
+.menu_item{
+    padding: 1rem 3rem;
+    flex: 1 0 20%; 
+}
+
+.menu_item:hover, .menu_item--active{
+    background-color: white;
+    border-left: 1px solid #CFCFCF;
+    border-right:1px solid #CFCFCF ;
+    border-bottom: none;
+    margin: 0 -2px;
+}
+.menu__item__link{
+    text-decoration: none;
+    color: black;
+    font-family: Roboto;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.menu__item--current .menu__item__link{
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.3rem;
+}
+
+.menu__item__link:hover{
+    text-decoration: underline;
+    color: #1C60BB;
+    margin: 0 1px;
+}
+
+.menu__sub {
+    display: flex;
+    width: 100%;
+    border-left: 1px solid #CFCFCF;
+    border-right:1px solid #CFCFCF ;
+    height: 20rem;
+    background-color: white;
+    display: none;
+  }
+
+  .menu__sub__categories{
+      display: flex;
+      margin : 0 5rem;
+      width: calc(40% - 2px);
+      padding: 0.5rem;
+  }
+  .menu__sub__categories:nth-child(even) {
+      background-color:var(--dark-grey);
+    }
+
+  /* .menu_item:first-child:hover{
+      border-left:none;
+      margin-left: 0;
+  }
+
+  .menu_item:last-child:hover{
+      border-right: none;
+      margin-right: 0;
+  } */
+
+  .menu__sub__visual{
+    padding: 0.5rem;
+    width: calc(60% - 1rem - 2px);
+  }
+
+  .menu__sub__visual__img {
+    width: 100%;
+  }
+
+  .menu__sub__categories__header{
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--light-grey);
+    margin-right: 5rem;
+    padding-bottom: 1rem;
+  }
+  .menu__sub__categories__items{
+      list-style: none;
+      color: var(--light-grey);
+      padding: 0;
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+  }
+
+  .menu__sub__categories__item__link {
+    text-decoration: none;
+    color: var(--light-grey);
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+  
+  .menu__sub__categories__item__link:hover {
+    text-decoration: underline;
+  }
+
+
+
+

@@ -1,0 +1,65 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <table>
+            <tr>
+            <th>name</th>
+            <th>height</th>
+            <th>place</th>
+            </tr>
+            <tr>
+            <td>Kilimanjaro</td>
+            <td>5895</td>
+            <td>Tanzania</td>
+            </tr>
+        </table>
+    </body>
+    <script>
+        let mountains = [
+            {
+                name : "nandi",
+                height : 500,
+                place : "banglore"
+            },
+            {
+                name : "nandi",
+                height : 500,
+                place : "banglore"
+            },
+            {
+                name : "nandi",
+                height : 500,
+                place : "banglore"
+            }
+        ]
+        let table = document.createElement("table");
+        let len = mountains.length;
+        for( let j = 0;j <= len;j++ ){
+            let tr = document.createElement("tr");
+            table.appendChild(tr);
+            console.log(table)
+        }
+//        table.appendChild(tr.repeat(len+1));
+        for( let k in mountains[0]){
+            let th = document.createElement("th");
+            th.innerHTML = k;
+            table.firstChild.appendChild(th);
+        }
+        let childs = table.childNodes;
+        console.log(childs)
+        for ( let i = 0 ;i < len ;i++ ){
+            let m = mountains[i];
+            for ( let k in m){
+                let td = document.createElement("td");
+                if(typeof m[k] == Number()){
+                    td.style.textAlign = "right";
+                }
+                td.innerHTML = m[k];
+                childs[i+1].appendChild(td);
+            }
+        }
+        table.setAttribute("id","mountains");
+        document.body.appendChild(table);
+    </script>
+</html>

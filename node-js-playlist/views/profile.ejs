@@ -1,0 +1,9 @@
+<%- include('partial/nav.js') %>
+<h1>render profile of <%= user %></h1>
+<p>age = <%= data.age %></p>
+<p>Hobbies</p>
+<ul>
+  <%  for(let hobby of data.hobbies){   %>
+  <li><%= hobby %></li>
+  <% }; %>
+<ul>

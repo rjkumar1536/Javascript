@@ -1,0 +1,225 @@
+<html>
+    <style>
+        .dot{
+            width:20px;
+            height: 20px;
+            border-radius: 1px;
+            background: red;
+        }
+/*
+        .first{
+            width: 900px;
+            margin: 0 auto;
+            height: 100px;
+            border: 1px solid black;
+            background: red;
+        }
+        .second{
+            height: 90px;
+            margin: 5px;
+            border: 1px solid black;
+            background: yellow;
+        }
+        .third{
+            height: 80px;
+            margin: 5px;
+            border: 1px solid black;
+            background: pink;
+        }
+        .four{
+            height: 50px;
+            margin: 20px;
+            border: 1px solid black;
+            background: green;
+        }
+        button{
+            content: "hello";
+        }
+        p{
+            width : 200px;
+            height: 100px;
+            margin : 20px;
+            padding : 10px;
+            border: 1px dotted red;
+        }
+*/
+        img {
+            margin-top : 500px;
+            margin-left : 300px;
+            height : 500px;
+            width : 200px;
+            display: none;
+        }
+        #progress{
+            border-bottom: 2px solid blue;
+            width: 0;
+            position: fixed;
+            top: 0; left: 0;
+        }
+    </style>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <button>change color</button>
+<!--
+        <label for="name">Name :</label>
+        <input type = "text" id = "name" data-help = "Type full Name"/>
+        <label for="age">Age :</label>
+         <input type = "text" id = "age" data-help = "Age in years"/>
+        <p class= "help"></p>
+-->
+<!--        <div id="progress"></div>-->
+<!--        <img src = "photo-big.jpg" />-->
+<!--        <p></p>-->
+<!--
+        <div class="first">
+            <div class="second">
+                <div class="third">
+                    <div class="four">
+                        <button>Hello</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="event">
+            <p>Hello mousedown here</p>
+            <p>Hello mouseUphere</p>
+        </div>
+-->
+    </body>
+    <script>
+//        document.addEventListener("click",event=>{
+//            var newEle = document.createElement("p")
+//            newEle.className = "dot";
+//            newEle.style.background = "red";
+//            newEle.style.borderRadius = 1;
+//            newEle.style.width = "1px";
+//            newEle.style.height = "1px";
+//            newEle.style.position = "absolute";
+//            newEle.style.top = event.clientY;
+//            newEle.style.left = event.clientX;
+//            newEle.style.border = "1px solid black"
+//            document.body.appendChild(newEle)
+//        })
+//        var para = document.querySelector("p");
+//        var left = 200;
+//        para.addEventListener("mousedown", event=>{
+//                para.style.cursor = "col-resize";
+//                left = event.clientX;
+//                para.addEventListener("mouseover",event1=>{
+//                if(event1.buttons == 0){
+//                    para.removeEventListener("mouseover");
+//                }
+//                else{
+//                    let dist = event1.clientX - left;
+//                    let newWid = Math.max(10, para.offsetWidth + dist);
+//                    left = event1.clientX;
+//                    para.style.width = newWid + "px";
+//                }
+//                });
+//                event.preventDefault();
+//        })
+        let colors = ["red","blue","orange","green","black","yellow"];
+        let selected = 0;
+        document.addEventListener("touchmove", event=>{
+            var posx = event.touches;
+            console.log(typeof posx);
+            for(let k in posx){
+                let ele = posx[k];
+//                console.log(typeof posx[k] == Object.prototype);
+                if(typeof posx[k] == typeof Object.prototype){
+                    console.log("hello");
+                    let para = document.createElement("p");
+                    para.className = "dot";
+                    para.style.background = colors[selected];
+                    para.style.position = "absolute";
+                    para.style.left = ele.clientX;
+                    para.style.top = ele.clientY;
+                    document.body.append(para);
+                }  
+            } 
+        })
+        let button = document.body.querySelector("button");
+        button.addEventListener("click",event =>{
+            selected = (selected + 1)%colors.length;
+            console.log(selected);
+        })
+//        document.body.appendChild(document.createTextNode("qwertyuiopasdfghjklzxcvbnm".repeat(1000)));
+//        let p = document.querySelector("#progress");
+//        window.addEventListener("scroll",event=>{
+//            let max = document.body.scrollWidth - innerWidth;
+//            p.style.width = `${(pageXOffset/max)*100}%`
+//        })
+//       var element =  document.querySelector(".four");
+//        element.addEventListener("click", event => {
+//            console.log("event 4");
+//            event.stopPropagation();
+//        })
+//        var element =  document.querySelector(".first");
+//        element.addEventListener("click", event => {
+//            console.log("event 1");
+//        })
+////        var button = document.querySelector("button");
+////        console.log(button)
+//        document.body.addEventListener("mousedown", event => {
+//            event.preventDefault();
+////            alert('event listed');
+//            if(event.button == 0){
+////                alert("left");
+//                console.log(0);
+//                event.preventDefault();
+//            }
+//            else if(event.button == 1){
+////                alert("right");
+//                console.log(1);
+//                event.preventDefault();
+//            }
+//            else{
+////                alert("middle");
+//                console.log(2)
+//                event.preventDefault();
+//            }
+//        })
+//        document.body.addEventListener("keyup", event=>{
+//            document.body.style.background = "white";
+//        })
+//        document.body.addEventListener("keydown", event=>{
+////            document.body.style.background = "red";
+//            if(event.ctrlKey && event.keyCode === 86){
+////                event.keyCode
+//                alert(event.charCode);
+//            }
+//        })
+//        let help = document.querySelector(".help");
+//        let fields = document.querySelectorAll("input");
+//        for(let e in Array.from(fields)){
+////            console.log(fields);
+//            let ele = fields[e];
+//            ele.addEventListener("focus",event=>{
+//                help.innerHTML = event.target.getAttribute("data-help");
+//            })
+//            ele.addEventListener("blur",event=>{
+//                help.innerHTML = "";
+//            })
+//        }
+//        var para = document.querySelector("p")
+//        para.addEventListener("mouseup",event=>{
+//            console.log("mouseup")
+//        })
+//        para.addEventListener("mousedown",event=>{
+//            console.log("mousedown")
+//        })
+//        var eve = document.querySelector(".event");
+//        eve.addEventListener("click", event=>{
+//            console.log('CLICK');
+//        })
+//        eve.addEventListener("mouseup",event=>{
+//            console.log("mouseup event");
+//        })
+//        eve.addEventListener("mousedown",event=>{
+//                             console.log("mousedown event");
+//                             })
+    </script>
+</html>

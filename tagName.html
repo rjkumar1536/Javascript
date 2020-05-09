@@ -1,0 +1,33 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Heading with a <span>span</span> element.</h1>
+        <p>A paragraph with <span>one<span></span></span>, <span>two</span>spans.</p>
+    </body>
+    <script>
+        function byTagName(node, tagName) {
+    // Your code here.
+            let nodeLists = []
+            function explore(node){
+                let childs = node.childNodes;
+                if(childs.length > 0){
+                    for ( let i = 0;i < childs.length ;i++){
+                           explore(childs[i])
+                    }
+                }
+                if(node.nodeType == document.ELEMENT_NODE){
+                    let nodeName = node.nodeName.toLocaleLowerCase();
+                    if(nodeName == tagName){
+                        nodeLists.push(node)
+                    }
+                } 
+            }
+            explore(node);
+            return nodeLists
+        } 
+        console.log(byTagName(document.body, "h1").length)
+//        console.log(document.body.querySelectorAll("span"))
+    </script>
+</html>
+

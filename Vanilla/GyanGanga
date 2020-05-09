@@ -1,0 +1,13 @@
+Debouncing -- Function call only to made when time internal between two events is exceeding a cetrian limits
+
+Throttling -- Functiona call only to made when time interval between two functional call is exceeding a certain limits.
+
+
+FPM_FORM_UIBB_GL2
+/TMCSL/WDCC_FLAT_SEL_ROUTES
+
+FPM_TREE_UIBB
+/TMCSL/WDCC_FLAT_TDL_ROUTES
+
+
+IF_FPM_GUIBB_FORM

@@ -1,0 +1,20 @@
+<textarea id = "text"></textarea><br>
+<button>Run</button><br>
+<span></span>
+<script>
+    let button = document.querySelector("button");
+    let msg = document.querySelector("span");
+    button.addEventListener("click", event => {
+        let textarea = document.getElementById("text")
+        code = textarea.value
+        try{
+             msg.innerHTML = Function(code)();
+             msg.style.color = "green";
+        }
+        catch(e){
+            msg.innerHTML = "Error : " + e;
+            msg.style.color = "red";
+        }
+       
+    });
+</script>

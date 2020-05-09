@@ -1,0 +1,37 @@
+{
+  "name": "spa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "mongodb": "^2.2.33",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.5.2"
+  }
+}
+
+ Incident 58368 / 2020 / ABAP Dump while updating rate table in CSL FWAQ / SAP Delivered Support
+
+lo_message = /bobf/cl_frw_factory=>get_message( ).
+    MESSAGE w306(/scmtms/tc_rates)
+              INTO lv_message.
+    MOVE-CORRESPONDING sy TO ls_symsg.
+    lo_message->add_message(
+    is_msg  = ls_symsg ).
+
+    mo_controller->post_syncup_data(
+      EXPORTING
+        iv_bo_key  =  /scmtms/if_tcrates_c=>sc_bo_key
+        io_message = lo_message
+*      io_change  = lo_change
+    ).
+
+
+2886456
+   
+    3800623

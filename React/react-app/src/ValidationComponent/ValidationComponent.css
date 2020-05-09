@@ -1,0 +1,22 @@
+.red {
+    color : red;
+    margin : 50px auto;
+    width : 15%;
+    background-color: red;
+    font-family:cursive;
+    font-size: 30px;
+    color : white;
+    border-radius: 20px;
+    padding : 10px;
+}
+.green{
+    color : green;
+    margin : 50px auto;
+    width : 15%;
+    background-color: green;
+    font-family:cursive;
+    font-size: 30px;
+    color : white;
+    border-radius: 20px;
+    padding : 10px; 
+}

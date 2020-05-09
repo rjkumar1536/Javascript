@@ -1,0 +1,33 @@
+.new {
+  color: #ff7b29;
+  font-weight: bold; }
+  @media only screen and (max-width: 480px) {
+    .new {
+      display: none; } }
+  .new span {
+    text-transform: uppercase; }
+
+.portfolio, .starbucks {
+  border: 1px solid #9799a7; }
+  .portfolio ul, .starbucks ul {
+    list-style: none;
+    border: 1px solid #9799a7; }
+    .portfolio ul::after, .starbucks ul::after {
+      content: "";
+      display: table;
+      clear: both; }
+  .portfolio li, .starbucks li {
+    float: left;
+    font-family: Baskerville, Palatino, serif;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 10px; }
+
+.starbucks li {
+  clear: left;
+  font-size: 50px;
+  color: red; }
+  .starbucks li:hover {
+    color: yellow; }
+
+/*# sourceMappingURL=index.css.map */

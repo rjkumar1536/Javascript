@@ -1,0 +1,37 @@
+body{
+    background-color: mintcream;
+}
+.box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height : 100vh;
+    background-color: lightblue;
+    /* color : white; */
+}
+a{
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 10vh;
+    text-decoration: none;
+}
+
+.box2{
+    display: flex;
+    height : 100vh;
+    justify-content: space-around;
+    align-items : center;
+}
+.box2 > a{
+    color: black;
+    font-size: 5vh;
+    width : 50vh;
+}
+
+img{
+    width : 50vw;
+    height : 50vh;
+    box-shadow: #eeeeee;
+}

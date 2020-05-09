@@ -1,0 +1,37 @@
+Notes: <select></select> <button>Add</button><br>
+<textarea style="width: 100%"></textarea>
+<script>
+    let list = document.querySelector("select");
+    let note = document.querySelector("textarea");
+    let state;
+    function setState(newState){
+        list.textContent = "";
+        for(let name of Object.keys(newState.notes)){
+            let option = document.createElement("option");
+            option.textContent = name;
+            if(newState.selected == name){
+                option.selected = true;
+                note.textContent = newState.notes[name];
+            }
+            list.appendChild(option);
+        }
+        localStorage.setItem("Notes", JSON.stringify(newState));
+        state = newState;
+    }
+    setState(JSON.parse(localStorage.getItem("Notes"))|| {
+        notes : { "shopping list" : "carrots\nladyfingers"},
+        selected : "shopping list"
+    })
+    document.querySelector("button").addEventListener("click" , event => {
+        let name = prompt("note Name");
+        if(name ){
+            setState({notes : Object.assign({}, state.notes , {[name]: ""}), selected : name});
+        }
+    })
+    note.addEventListener("change" , event => {
+        setState({notes : Object.assign({}, state.notes, {[state.selected] : note.value}), selected: state.selected});
+    })
+    list.addEventListener("change", event => {
+        setState({notes : state.notes , selected : list.value} );
+    })
+</script>

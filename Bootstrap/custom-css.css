@@ -1,0 +1,31 @@
+.customDiv{
+    margin: 3px;
+    text-align: center;
+    min-height: 100px;
+}
+.sidebar{
+    background: yellow;
+    margin: 3px;
+    text-align: center;
+    min-height: 150px;
+}
+.mainContent{
+    background: yellow;
+    margin: 3px;
+    text-align: center;
+    min-height: 310px;
+}
+img{
+    height : 200px;
+    margin-bottom: 10px;
+}
+a{
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+    color:indianred;
+}
+a:link{
+    color:green;
+}

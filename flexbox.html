@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>
+        </title>
+        <style>
+            .container {
+                display: flex;
+                background: grey;
+/*                flex-direction: row;*/
+                flex-wrap: wrap;
+                justify-content: space-between;
+                /*hrizonatlly alignment of flexitmes default : flex-start*/
+                height:500px;
+                align-items: center;        
+                /*vertically arrengement of flexitems default : stertch*/
+                align-content: flex-start;
+                /*vertically arrengement of flexlines default : stertch*/
+            }
+            .container>div{
+                background: green;
+                border: 1px solid black;
+                padding: 10px;
+                margin: 50px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "container">
+            <div>1</div>
+            <div style="order: 1;flex-grow: 4">2</div>
+            <div style="order: 1;flex-shrink: : 8">3</div>
+            <div style="order: 1;flex-grow: 8;align-self: auto;">4</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+        </div>
+    </body>
+</html>
+
+flex : inital = flex 0 1 auto (flex grow , flex-shrink,flex-basis{initial-size})
+flex: auto  = flex: 1 1 auto;
+flex: none = flex: 0 0 auto.
+flex: <positive-number> = flex: 1 1 0

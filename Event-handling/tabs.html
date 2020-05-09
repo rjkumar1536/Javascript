@@ -1,0 +1,80 @@
+<html>
+    <style>
+        .panel{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .content{
+            margin: auto;
+        }
+    </style>
+    <head>
+        <title>
+        </title>
+    </head>
+    <body>
+        <tab-panel>
+          <div data-tabname="one">Tab one</div>
+          <div data-tabname="two">Tab two</div>
+          <div data-tabname="three">Tab three</div>
+        </tab-panel>
+    </body>
+    <script>
+        function asTabs(node1) {
+    // Your code here.
+            let node = node1.childNodes; 
+            let panel = document.createElement("tab-panel");
+            let div = document.createElement("div");
+            panel.className = "panel"
+            div.className = "content";
+            let flag = 0;
+            for( let element in Array.from(node)){
+                if(node[element].nodeType != Node.TEXT_NODE){
+                    let button = document.createElement("button");
+                    let divChild = document.createElement("div");
+                    button.style.width = "300px";
+                    button.style.height = "50px";
+                    button.style.zIndex = 5;
+                    if(flag == 0){
+                        button.style.background = "grey";
+                        divChild.style.display = "block";
+                    }
+                    else{
+                        divChild.style.display = "none";
+                    }
+                    divChild.style.fontSize = "100px"
+                    button.innerHTML = node[element].getAttribute('data-tabname'); 
+                    divChild.innerHTML = node[element].innerHTML;
+                    panel.appendChild(button);
+                    div.appendChild(divChild);
+                    flag++;
+                } 
+            }
+            document.body.appendChild(panel);
+            document.body.appendChild(div);
+            node1.remove();
+        }
+        asTabs(document.querySelector("tab-panel"));
+        document.addEventListener("click",event=>{
+            if(event.target.nodeName == "BUTTON"){
+                let elemsts = document.querySelectorAll("button");
+                let div = document.body.querySelector("div");
+                let divs = div.childNodes;
+                let targetNode = "";
+                for(let l in Array.from(elemsts)){
+                    elemsts[l].style.background = "";
+                    divs[l].style.display = "none";
+                    console.log(elemsts[l] == event.target);
+                    if(elemsts[l] == event.target){
+                        targetNode = divs[l];
+                    }
+                } 
+                event.target.style.background = "grey";
+                targetNode.style.display = "block";
+                event.target.style.zIndex = 0;
+            }
+//            event.preventDefault();
+        })
+    </script>
+</html>

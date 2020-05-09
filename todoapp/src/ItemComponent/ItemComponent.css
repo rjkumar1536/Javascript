@@ -1,0 +1,55 @@
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .item{
+        width : 80%;
+        height : 80px;
+        box-shadow: 20px 0px 12px #ccc;
+        margin-top : 20px;
+    }
+    .content{
+        outline: hidden;
+        color : black;
+        border: none !important;
+        float : left;
+        margin-left : 10px;
+        width : 30%;
+        height : 60px;
+        overflow: hidden;
+        font-size:10px;
+        text-align: center;
+        background-color : white;
+    }
+    .btn2{
+        margin: 20px;
+        width : 15%;
+        height : 30px;
+        font-size: 10px;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .item{
+        width : 80%;
+        height : 100px;
+        box-shadow: 20px 0px 12px #ccc;
+        margin-top : 20px;
+    }
+    .content{
+        outline: hidden;
+        color : black;
+        border: none !important;
+        float : left;
+        margin-left : 50px;
+        width : 40%;
+        height : 80px;
+        overflow: hidden;
+        font-size: 1.3rem;
+        text-align: center;
+        background-color : white;
+    }
+    .btn2{
+        margin: 20px;
+        width : 20%;
+        height : 50px;
+    }
+  }

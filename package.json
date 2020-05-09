@@ -1,0 +1,23 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "Exercises",
+  "main": "aProgrammingLangauage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjkumar1536/Javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rjkumar1536/Javascript/issues"
+  },
+  "homepage": "https://github.com/rjkumar1536/Javascript#readme",
+  "dependencies": {
+    "passport": "file:passport",
+    "passport-google-oauth20": "^2.0.0"
+  }
+}

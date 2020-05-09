@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" >
+      <link rel="stylesheet" href="custom-css.css">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+      <code>var p = new Date()</code>
+      <pre class="pre-scrollable">
+  using System;  
+  public class PalindromeExample  
+   {  
+     public static void Main(string[] args)  
+      {  
+          int n,r,sum=0,temp;    
+          Console.Write("Enter the Number: ");   
+          n = int.Parse(Console.ReadLine());  
+          temp=n;      
+          while(n>0)      
+          {      
+           r=n%10;      
+           sum=(sum*10)+r;      
+           n=n/10;      
+          }      
+          if(temp==sum)      
+           Console.Write("Number is Palindrome.");      
+          else      
+           Console.Write("Number is not Palindrome");     
+    }  
+  } 
+  </pre>
+  <samp>Enter the number=113  
+Number is not Palindrome.</samp>
+  <kbd>CTRL + K</kbd>
+  <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

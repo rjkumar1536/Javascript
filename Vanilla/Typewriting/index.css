@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.intro{
+    display: flex;
+    justify-content: center;
+    width : 100vw;
+    flex-wrap: wrap;
+    align-items: center;
+    height : 100vh;
+    color: white;
+    background: linear-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.01)), url('./pexels-photo-1229861.jpeg');
+    background-size: cover;
+}
+
+.typing{
+    position: relative;
+    margin-left : 30px;
+}
+
+.typing::after{
+    content: "";
+    position: absolute;
+    right : -5px;
+    height : 90%;
+    width : 1px;
+    border: 1px solid white;
+    animation: blink alternate infinite 0.4s;
+}
+
+@keyframes blink{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
